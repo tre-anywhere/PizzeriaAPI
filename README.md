@@ -27,7 +27,7 @@ Training for engineer role at work.
 
 ## Authors
 
-- **Tre' Grisby** - _Initial work_ - [trewaters](https://github.com/tre-anywhere)
+_Initial work_ - [**Tre' Grisby**](https://github.com/tre-anywhere)
 
 
 ## License
