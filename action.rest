@@ -47,5 +47,14 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/pizzeria/644c45de42997fa323ba30b0
+DELETE http://localhost:3000/pizzeria/644c49b20ff8df0c6039754c
 Content-Type: application/json
+
+
+###
+PATCH http://localhost:3000/pizza/644c3c607b9e154c281b2dbc/5
+Content-Type: application/json
+
+{
+  "rating": 4
+}

@@ -15,6 +15,10 @@ db.once("open", () => console.log("open the database"));
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hell World!");
+});
+
 const pizzaRouter = require("./routes/pizza");
 const pizzeriaRouter = require("./routes/pizzeria");
 
