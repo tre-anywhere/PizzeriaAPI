@@ -21,7 +21,6 @@ This is an ExpressJS Pizzeria API. Call me for a pie anytime!
 
 _engineer_ - [**Tre' Grisby**](https://github.com/tre-anywhere)
 
-
 ## License
 
 This project is licensed under the "GNU AFFERO GENERAL PUBLIC LICENSE". See the [LICENSE.md](https://github.com/tre-anywhere/PizzeriaAPI/blob/main/LICENSE) file for details
