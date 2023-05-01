@@ -11,12 +11,13 @@ POST http://localhost:3000/pizza
 Content-Type: application/json
 
 {
-    "name": "The Newest Combination",
-  "description": "New pizza!"
+  "name": "Lazy Pizza",
+  "description": "Not your pizza!",
+  "toppings": [{"topping":"onion"},{"topping":"sausage"},{"topping":"gouda-cheese"}]
   }
 
 ###
-PATCH http://localhost:3000/pizza/644b0d6b0efb0680513356c1
+PATCH http://localhost:3000/pizza/64504387cf9800545387b40f
 Content-Type: application/json
 
 {
@@ -24,7 +25,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/pizza/644c321497699f8506919a5c
+DELETE http://localhost:3000/pizza/64504387cf9800545387b40f
 Content-Type: application/json
 
 ###
@@ -34,7 +35,7 @@ Get http://localhost:3000/pizzeria
 
 ###
 
-Get http://localhost:3000/pizzeria/644c3b19d18fedf164d1224c
+Get http://localhost:3000/pizzeria/645049c0ec30581ab4c284c1
 
 
 ###
@@ -42,19 +43,27 @@ POST http://localhost:3000/pizzeria
 Content-Type: application/json
 
 {
-  "name": "hmmm",
-  "phone": "111-111-1111"
+  "name": "AROUND the corner Pizzeria",
+  "phone": "111-222-1111"
 }
 
 ###
-DELETE http://localhost:3000/pizzeria/644c49b20ff8df0c6039754c
+DELETE http://localhost:3000/pizzeria/645043d7cf9800545387b424
 Content-Type: application/json
 
 
 ###
-PATCH http://localhost:3000/pizza/644c3c607b9e154c281b2dbc/5
+PATCH http://localhost:3000/pizzeria/645049c0ec30581ab4c284c1
 Content-Type: application/json
 
 {
-  "rating": 4
+  "name": "Just another pizza shop"
+}
+
+###
+PATCH http://localhost:3000/pizzeria/645043d7cf9800545387b424/4.9
+Content-Type: application/json
+
+{
+  "userRating":"4.9"
 }
