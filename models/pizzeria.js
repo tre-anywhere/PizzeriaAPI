@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 
 const pizzeriaSchema = new mongoose.Schema({
   name: { type: String, default: "Pizzeria Pie" },
-  phone: { type: String, default: "555-555-5555" },
-  website: { type: String, default: "https://www.pizzeriapie.com" },
+  phone: { type: String, default: "000-000-0000" },
+  website: { type: String, default: "https://www.pizzeri-pie.com" },
   address: {
-    street: { type: String, default: "123 Main St" },
-    city: { type: String, default: "Anytown" },
-    state: { type: String, default: "NY" },
-    postalCode: { type: String, default: "10001" },
+    street: { type: String, default: "321 Sunset Cliffs Ave" },
+    city: { type: String, default: "San Diego" },
+    state: { type: String, default: "CA" },
+    postalCode: { type: String, default: "98765" },
   },
-  rating: { type: Number, default: 0 },
+  rating: { type: Number, default: 5 },
   ratings: [{ userRating: { type: Number, default: 0 } }],
 });
 
