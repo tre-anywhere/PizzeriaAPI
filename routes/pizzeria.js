@@ -51,17 +51,18 @@ router.post("/", jsonParser, async (req, res) => {
 router.patch("/:id/userRating", getPizzeria, jsonParser, async (req, res) => {
   console.log("router.patch(/id:/userrating)");
 
-  const userrating = req.params.userrating;
+  const userrating = req.params;
 
-  // console.log("userrating = req.body.userrating", req.body.userrating);
-  // console.log("req.params.userrating", req.params.userrating);
-  console.log("res.pizzeria", res.pizzeria);
-  console.log("req.params", req.params);
+  console.log("req.body", req.body);
+  // console.log("res", res);
+  console.log("req.params.id", req.params.id);
+  // console.log("res.pizzeria", res.pizzeria);
 
-  var pizzeriaToUpdate = res.pizzeria;
+  const pizzeriaToUpdate = res.pizzeria;
 
   if (pizzeriaToUpdate.name) {
-    pizzeriaToUpdate.ratings.push({ userrating: userrating });
+    await pizzeriaToUpdate.ratings.push({ userRating: userrating });
+    // await pizzeriaToUpdate.ratings.push({ userRating: "1" });
     pizzeriaToUpdate.save();
 
     res.status(200).send("");
