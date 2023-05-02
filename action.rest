@@ -43,10 +43,10 @@ Content-Type: application/json
 }
 
 ###
-Get http://localhost:3000/pizzeria/645165481a138f1a3c860b12
+Get http://localhost:3000/pizzeria/644c4711c028dea88c368e5c
 
 ###
-PATCH http://localhost:3000/pizzeria/645165481a138f1a3c860b12
+PATCH http://localhost:3000/pizzeria/644c4711c028dea88c368e5c
 Content-Type: application/json
 
 {
@@ -54,7 +54,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:3000/pizzeria/645165481a138f1a3c860b12/userRating?
+PATCH http://localhost:3000/pizzeria/644c4711c028dea88c368e5c/?userRating
 
 {
   "userRating":"5.0"
