@@ -29,6 +29,9 @@ router.get("/", jsonParser, async (req, res) => {
 
 router.get("/:id", getPizza, async (req, res) => {
   // Get the given pizza for the passed in 'id'
+  if (!res.pizza) {
+    return res.send("No Pizza Pie! Try again.");
+  }
   res.json(res.pizza);
 });
 
