@@ -48,26 +48,31 @@ router.post("/", jsonParser, async (req, res) => {
   }
 });
 
-router.patch("/:id/userRating", getPizzeria, jsonParser, async (req, res) => {
-  console.log("router.patch(/id:/userrating)");
+router.patch("/userrating/:id", getPizzeria, jsonParser, async (req, res) => {
+  console.log("router.patch(/userrating/:id)");
 
-  const userrating = req.params;
-
-  console.log("req.body", req.body);
-  // console.log("res", res);
-  console.log("req.params.id", req.params.id);
-  // console.log("res.pizzeria", res.pizzeria);
-
+  pizzeria = new Pizzeria(req.body);
   const pizzeriaToUpdate = res.pizzeria;
 
+  const userrating = pizzeriaToUpdate.ratings.userRating;
+
+  // console.log("req.body", req.body);
+  // console.log("req.params.id", req.params.id);
+  // console.log("res.pizzeria", res.pizzeria);
+  console.log("pizzeria", pizzeria);
+
   if (pizzeriaToUpdate.name) {
-    await pizzeriaToUpdate.ratings.push({ userRating: userrating });
-    // await pizzeriaToUpdate.ratings.push({ userRating: "1" });
+    console.log("pizzeriaToUpdate", pizzeriaToUpdate);
+
+    await pizzeriaToUpdate.ratings.push({
+      userRating: userrating,
+    });
+
     pizzeriaToUpdate.save();
 
-    res.status(200).send("");
+    res.status(200).send("Update complete");
   } else {
-    res.status(400).send("Bad pizza");
+    res.status(400).send("No update was made.");
   }
 });
 
