@@ -10,6 +10,13 @@ const jsonParser = bodyParser.json();
 let pizzeria = {};
 
 async function getPizzeria(req, res, next) {
+  // if (!req.params.userRating) {
+  //   return res.status(400).send("userRating is required");
+  // }
+
+  console.log("getPizzeria res.body", res.body);
+  console.log("getPizzeria req.params", req.params);
+
   try {
     pizzeria = await Pizzeria.findById(req.params.id);
     if (!pizzeria) {
@@ -85,30 +92,29 @@ router.patch("/:id/userRating", getPizzeria, jsonParser, async (req, res) => {
   pizzeria = req.body.params;
   const pizzeriaToUpdate = res.pizzeria;
 
-  console.log("req.body.params", req.body.params);
-  console.log("res.pizzeria", res.pizzeria);
-  console.log("pizzeria", pizzeria);
+  // console.log("req.body.params", req.body.params);
+  // console.log("res.pizzeria", res.pizzeria);
+  // console.log("pizzeria", pizzeria);
   // console.log("pizzeria.userRating", pizzeria.userRating);
-  
+
   if (pizzeriaToUpdate.name) {
     // Save the pizzeria
-    
+
     // pizzeriaToUpdate.ratings.push({ userrating: pizzeria.userrating });
     pizzeriaToUpdate.ratings.push({ userRating: pizzeria.userrating });
     console.log("pizzeriaToUpdate", pizzeriaToUpdate);
 
     // get the average of the ratings... toDo
-    
+
     pizzeriaToUpdate.save();
-    
+
     // Send back status with the pizza
     res.status(200).send("");
   } else {
     res.status(400).send("Rating was not updated!");
   }
 });
-*/
-
+ */
 // UPDATE pizzeria details
 router.patch("/:id", getPizzeria, jsonParser, async (req, res) => {
   console.log("router.patch(/:id)");
