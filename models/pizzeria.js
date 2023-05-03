@@ -12,6 +12,7 @@ const pizzeriaSchema = new mongoose.Schema({
   },
   rating: { type: Number, default: 5 },
   ratings: [{ userRating: { type: Number, default: 0 } }],
+  noOfRatings: Number,
 });
 
 module.exports = mongoose.model("Pizzeria", pizzeriaSchema);

@@ -8,7 +8,6 @@ const Pizzeria = require("../models/pizzeria");
 const jsonParser = bodyParser.json();
 
 let pizzeria = {};
-
 async function getPizzeria(req, res, next) {
   // if (!req.params.userRating) {
   //   return res.status(400).send("userRating is required");
@@ -56,65 +55,23 @@ router.post("/", jsonParser, async (req, res) => {
 });
 
 router.patch("/userrating/:id", getPizzeria, jsonParser, async (req, res) => {
-  console.log("router.patch(/userrating/:id)");
+  const userrating = req.body.userRating;
 
-  pizzeria = new Pizzeria(req.body);
   const pizzeriaToUpdate = res.pizzeria;
 
-  const userrating = pizzeriaToUpdate.ratings.userRating;
-
-  // console.log("req.body", req.body);
-  // console.log("req.params.id", req.params.id);
-  // console.log("res.pizzeria", res.pizzeria);
-  console.log("pizzeria", pizzeria);
-
-  if (pizzeriaToUpdate.name) {
-    console.log("pizzeriaToUpdate", pizzeriaToUpdate);
-
-    await pizzeriaToUpdate.ratings.push({
-      userRating: userrating,
-    });
-
+  if (pizzeriaToUpdate?.name) {
+    pizzeriaToUpdate.ratings.push({ usrRating: userrating });
     pizzeriaToUpdate.save();
-
-    res.status(200).send("Update complete");
+    res.status(200).send("Your rating has been registered.");
   } else {
-    res.status(400).send("No update was made.");
+    res
+      .status(400)
+      .send(
+        "Your pizzeria update was no good. Your request must include a userRating!"
+      );
   }
 });
 
-/* 
-// UPDATE the pizzeria rating
-router.patch("/:id/userRating", getPizzeria, jsonParser, async (req, res) => {
-  console.log("router.patch('/:id/userrating')");
-
-  // pizzeria = new Pizzeria(req.body);
-  pizzeria = req.body.params;
-  const pizzeriaToUpdate = res.pizzeria;
-
-  // console.log("req.body.params", req.body.params);
-  // console.log("res.pizzeria", res.pizzeria);
-  // console.log("pizzeria", pizzeria);
-  // console.log("pizzeria.userRating", pizzeria.userRating);
-
-  if (pizzeriaToUpdate.name) {
-    // Save the pizzeria
-
-    // pizzeriaToUpdate.ratings.push({ userrating: pizzeria.userrating });
-    pizzeriaToUpdate.ratings.push({ userRating: pizzeria.userrating });
-    console.log("pizzeriaToUpdate", pizzeriaToUpdate);
-
-    // get the average of the ratings... toDo
-
-    pizzeriaToUpdate.save();
-
-    // Send back status with the pizza
-    res.status(200).send("");
-  } else {
-    res.status(400).send("Rating was not updated!");
-  }
-});
- */
 // UPDATE pizzeria details
 router.patch("/:id", getPizzeria, jsonParser, async (req, res) => {
   console.log("router.patch(/:id)");
