@@ -1,6 +1,7 @@
 require("dotenv").config();
-
 const express = require("express");
+// eslint-disable-next-line import/no-extraneous-dependencies
+const cors = require("cors");
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,7 @@ db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("open the database"));
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Hell World!");
