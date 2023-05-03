@@ -1,7 +1,8 @@
 # Pizzeria API
+
 version 1.1.0
 
-This is an ExpressJS Pizzeria API. 
+This is an ExpressJS Pizzeria API.
 
 This API creates, modifies, saves and deletes Pizzerias and their Pizza Pies.
 
@@ -36,21 +37,24 @@ This project is licensed under the "GNU AFFERO GENERAL PUBLIC LICENSE". See the 
 ## NOTES
 
 ### In Progress
-* [ ] 
+
+- [ ]
 
 ### TO DO
-* [x] GET all Pizzerias
-* [x] GET a specific Pizzeria
-* [x] POST a new Pizzeria
-* [x] PATCH a specific Pizzeria: details like "name"
-* [x] PATCH a specific Pizzeria: "userRating"
-* [x] DELETE a specific Pizzeria
-* [ ] 
+
+- [x] GET all Pizzerias
+- [x] GET a specific Pizzeria
+- [x] POST a new Pizzeria
+- [x] PATCH a specific Pizzeria: details like "name"
+- [x] PATCH a specific Pizzeria: "userRating"
+- [x] DELETE a specific Pizzeria
+- [ ]
 
 ### COMPLETED
-* [x] GET all Pizza Pies
-* [x] GET a specific Pizza Pie
-* [x] POST a new Pizza Pie
-* [x] PATCH a specific Pizza Pie
-* [x] DELETE a specific Pizza Pie
-* [ ] 
+
+- [x] GET all Pizza Pies
+- [x] GET a specific Pizza Pie
+- [x] POST a new Pizza Pie
+- [x] PATCH a specific Pizza Pie
+- [x] DELETE a specific Pizza Pie
+- [ ]
