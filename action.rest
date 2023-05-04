@@ -3,7 +3,6 @@
 Get http://localhost:3000/pizza
 
 ###
-
 Get http://localhost:3000/pizza/6451603364cb272dc3ff5819
 
 ###
